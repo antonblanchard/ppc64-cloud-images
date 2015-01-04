@@ -40,8 +40,4 @@ clearpart --all --initlabel --drives=sda
 @c-development
 %end
 
-%addon com_redhat_kdump --disable --reserve-mb='256'
-
-%end
-
 poweroff
