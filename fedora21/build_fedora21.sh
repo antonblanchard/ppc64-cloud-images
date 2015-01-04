@@ -17,7 +17,7 @@ KICKSTART="fedora21.ks"
 TMP_IMAGE="$$.qcow2"
 TMP_INITRD="$$.initrd"
 
-if [ "$(uname -m)" = "ppc64" ]; then
+if [ "$(uname -m)" = "ppc64" -o "$(uname -m)" = "ppc64le" ]; then
 	KVM_OPTS="-enable-kvm -smp cores=4,threads=4"
 fi
 QEMU_OPTS="-m 4G -M pseries -nographic -vga none -net user -net nic"
