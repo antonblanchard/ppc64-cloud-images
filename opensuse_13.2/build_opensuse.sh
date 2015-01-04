@@ -7,13 +7,13 @@ IMAGE_SIZE="16G"
 
 # mirrorbrain makes it next to impossible to proxy cache, so use
 # a specific mirror for release installs
-#BASE_URL="http://suse.mirrors.tds.net/pub/opensuse/ports/ppc/distribution/13.2/repo/oss"
-#IMAGE="opensuse_13.2_${ARCH}.qcow2"
+BASE_URL="http://suse.mirrors.tds.net/pub/opensuse/ports/ppc/distribution/13.2/repo/oss"
+IMAGE="opensuse_13.2_${ARCH}.qcow2"
 #
 # Go straight to download.o.o if installing factory, the chances
 # of having an inconsistent tree is too likely
-BASE_URL="http://download.opensuse.org/ports/ppc/factory/repo/oss"
-IMAGE="opensuse_factory_${ARCH}.qcow2"
+#BASE_URL="http://download.opensuse.org/ports/ppc/factory/repo/oss"
+#IMAGE="opensuse_factory_${ARCH}.qcow2"
 
 VMLINUX="${BASE_URL}/boot/${ARCH}/linux"
 INITRD="${BASE_URL}/boot/${ARCH}/initrd"
