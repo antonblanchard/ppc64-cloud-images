@@ -29,7 +29,7 @@ clearpart --all --initlabel --drives=sda
 
 %packages
 @core
-@development-tools
+@development tools
 %end
 
 poweroff
