@@ -40,6 +40,15 @@ trap atexit EXIT
 
 # Add preseed file to the initrd, we can just append another cpio to it
 cp $INITRD $TMP_INITRD
+
+# align to 4B
+SIZE=$(stat --printf=%s $TMP_INITRD)
+MOD=$((SIZE % 4))
+if [ $MOD -ne 0 ]; then
+	EXTRA=$((4 - MOD))
+	dd if=/dev/zero of=$TMP_INITRD bs=1 count=$EXTRA conv=notrunc oflag=append
+fi
+
 echo $PRESEED | cpio -ovH newc >> $TMP_INITRD
 
 qemu-img create -f qcow2 $TMP_IMAGE $IMAGE_SIZE
